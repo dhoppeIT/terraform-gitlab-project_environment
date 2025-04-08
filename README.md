@@ -30,7 +30,7 @@ module "gitlab_project" {
 
 module "gitlab_project_environment" {
   source  = "gitlab.com/terraform-child-modules-48151/terraform-gitlab-project-environment/local"
-  version = "1.0.0"
+  version = "1.1.0"
 
   project = module.gitlab_project.id
   name    = "example-environment"
@@ -65,7 +65,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_auto_stop_setting"></a> [auto\_stop\_setting](#input\_auto\_stop\_setting) | The auto stop setting for the environment | `string` | `null` | no |
 | <a name="input_cluster_agent_id"></a> [cluster\_agent\_id](#input\_cluster\_agent\_id) | The cluster agent to associate with this environment | `number` | `null` | no |
+| <a name="input_description"></a> [description](#input\_description) | The description of the environment | `string` | `null` | no |
 | <a name="input_external_url"></a> [external\_url](#input\_external\_url) | Place to link to for this environment | `string` | `null` | no |
 | <a name="input_flux_resource_path"></a> [flux\_resource\_path](#input\_flux\_resource\_path) | The Flux resource path to associate with this environment | `string` | `null` | no |
 | <a name="input_kubernetes_namespace"></a> [kubernetes\_namespace](#input\_kubernetes\_namespace) | The Kubernetes namespace to associate with this environment | `string` | `null` | no |

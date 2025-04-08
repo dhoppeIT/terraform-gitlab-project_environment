@@ -8,10 +8,27 @@ variable "project" {
   description = "The ID or full path of the project to environment is created for"
 }
 
+variable "auto_stop_setting" {
+  type        = string
+  default     = null
+  description = "The auto stop setting for the environment"
+
+  # validation {
+  #   condition     = contains(["always", "with_action"], var.auto_stop_setting)
+  #   error_message = "Valid values are always, with_action"
+  # }
+}
+
 variable "cluster_agent_id" {
   type        = number
   default     = null
   description = "The cluster agent to associate with this environment"
+}
+
+variable "description" {
+  type        = string
+  default     = null
+  description = "The description of the environment"
 }
 
 variable "external_url" {
