@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://gitlab.com/terraform-child-modules-48151/terraform-gitlab-project_environment/compare/v1.1.0...v1.2.0) (2025-05-20)
+
+### Features
+
+* **terraform:** Add support for GitLab 18.x ([c592900](https://gitlab.com/terraform-child-modules-48151/terraform-gitlab-project_environment/commit/c592900b2fde98b3d7e1162cb386e4a902f53274))
+
 ## [1.1.0](https://gitlab.com/terraform-child-modules-48151/terraform-gitlab-project_environment/compare/v1.0.0...v1.1.0) (2025-04-08)
 
 ### Features
