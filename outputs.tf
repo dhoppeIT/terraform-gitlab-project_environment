@@ -1,3 +1,8 @@
+output "auto_stop_at" {
+  description = "The ISO8601 date/time that this environment will be automatically stopped at in UTC"
+  value       = gitlab_project_environment.this.auto_stop_at
+}
+
 output "created_at" {
   description = "The ISO8601 date/time that this environment was created at in UTC"
   value       = gitlab_project_environment.this.created_at

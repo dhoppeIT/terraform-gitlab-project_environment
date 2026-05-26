@@ -12,7 +12,7 @@ specify the required variables and run the command `terraform init`.
 ```hcl
 module "gitlab_group" {
   source  = "gitlab.com/terraform-child-modules-48151/terraform-gitlab-group/local"
-  version = "1.1.4"
+  version = "2.0.0"
 
   name = "Example (group)"
   path = "example-group-48165"
@@ -20,7 +20,7 @@ module "gitlab_group" {
 
 module "gitlab_project" {
   source  = "gitlab.com/terraform-child-modules-48151/terraform-gitlab-project/local"
-  version = "1.1.5"
+  version = "2.0.0"
 
   name = "example-project"
 
@@ -30,7 +30,7 @@ module "gitlab_project" {
 
 module "gitlab_project_environment" {
   source  = "gitlab.com/terraform-child-modules-48151/terraform-gitlab-project-environment/local"
-  version = "1.1.0"
+  version = "2.0.0"
 
   project = module.gitlab_project.id
   name    = "example-environment"
@@ -41,15 +41,15 @@ module "gitlab_project_environment" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | ~> 18.0 |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.4 |
+| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | ~> 19.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | ~> 18.0 |
+| ---- | ------- |
+| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | ~> 19.0 |
 
 ## Modules
 
@@ -58,13 +58,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [gitlab_project_environment.this](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/project_environment) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_auto_stop_setting"></a> [auto\_stop\_setting](#input\_auto\_stop\_setting) | The auto stop setting for the environment | `string` | `null` | no |
 | <a name="input_cluster_agent_id"></a> [cluster\_agent\_id](#input\_cluster\_agent\_id) | The cluster agent to associate with this environment | `number` | `null` | no |
 | <a name="input_description"></a> [description](#input\_description) | The description of the environment | `string` | `null` | no |
@@ -79,7 +79,8 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
+| <a name="output_auto_stop_at"></a> [auto\_stop\_at](#output\_auto\_stop\_at) | The ISO8601 date/time that this environment will be automatically stopped at in UTC |
 | <a name="output_created_at"></a> [created\_at](#output\_created\_at) | The ISO8601 date/time that this environment was created at in UTC |
 | <a name="output_id"></a> [id](#output\_id) | The ID of this resource |
 | <a name="output_slug"></a> [slug](#output\_slug) | The name of the environment in lowercase, shortened to 63 bytes, and with everything except 0-9 and a-z replaced with - |

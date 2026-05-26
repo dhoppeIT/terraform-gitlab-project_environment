@@ -13,10 +13,10 @@ variable "auto_stop_setting" {
   default     = null
   description = "The auto stop setting for the environment"
 
-  # validation {
-  #   condition     = contains(["always", "with_action"], var.auto_stop_setting)
-  #   error_message = "Valid values are always, with_action"
-  # }
+  validation {
+    condition     = var.auto_stop_setting == null || contains(["always", "with_action"], var.auto_stop_setting)
+    error_message = "Valid values are always, with_action."
+  }
 }
 
 variable "cluster_agent_id" {
@@ -59,4 +59,9 @@ variable "tier" {
   type        = string
   default     = null
   description = "The tier of the new environment"
+
+  validation {
+    condition     = var.tier == null || contains(["production", "staging", "testing", "development", "other"], var.tier)
+    error_message = "Valid values are production, staging, testing, development, other."
+  }
 }
